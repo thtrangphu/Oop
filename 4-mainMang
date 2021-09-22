@@ -1,0 +1,67 @@
+#include "Mang.h"
+
+int main() {
+
+    //BÀI 2.3
+
+	Mang mang;
+    int viTri, giaTri;
+
+    cout << "\n-----        NHAP MANG          ---\n";
+    mang.nhap();
+ 
+    cout << "\n-----        XUAT MANG          ---\n";
+    mang.xuat();
+
+    cout << "\n-----    LAY KICH THUOC MANG    ---\n";
+    cout << mang.layKichThuoc();
+
+    cout << "\n-----    LAY PHAN TU TAI VI TRI    ---\n";
+    cout << "Nhap vi tri: "; 
+    cin.clear();
+    cin.ignore();
+    cin >> viTri;
+    giaTri = mang.layPhanTuTaiViTri(viTri);
+    if (giaTri == INT_MAX) {
+        cout << "Khong ton tai vi tri nay trong mang." << endl;
+    }
+    else
+        cout << "Phan tu tai vi tri " << viTri << " la: " << giaTri << endl;
+
+    cout << "\n----- GAN GIA TRI CHO PHAN TU TAI VI TRI ---\n";
+    cout << "Nhap vi tri: ";
+    cin >> viTri;
+    cout << "Nhap gia tri: ";
+    cin >> giaTri;
+    int x = mang.ganGiaTri(viTri, giaTri);
+    if (x == 0)
+        cout << "Khong ton tai vi tri trong mang!" << endl;
+    else
+    {
+        cout << "Gan gia tri thanh cong!" << endl;
+        mang.xuat();
+    }
+
+    cout << "\n-----   TIM PHAN TU TRONG MANG    ---\n";
+    cout << "Nhap gia tri phan tu can tim: ";
+    cin >> giaTri;
+    viTri = mang.timPhanTu(giaTri);
+    if (viTri == -1) {
+        cout << "Khong ton tai " << giaTri << " trong mang.";
+    }
+    else
+    {
+        cout << giaTri << " nam o vi  tri " << viTri << " trong mang.";
+    }
+    cout << endl;
+
+    //Sắp xếp 
+    cout << "\n-----   SAP XEP CAC PHAN TU TRONG MANG    ---\n";
+    cout << "Sap xep tang: ";
+    mang.sapXep(tang);
+    mang.xuat();
+    cout << "\nSap xep giam: ";
+    mang.sapXep(giam);
+    mang.xuat();
+}
+
